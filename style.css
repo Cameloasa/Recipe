@@ -390,6 +390,58 @@ a:focus-visible {
 }
 
 
+/* ==============================
+   Recipe Card Content
+   ============================== */
+
+.recipe-category {
+    margin-bottom: var(--space-xs);
+    color: var(--color-primary);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+}
+
+.recipe-card h3 {
+    margin-bottom: var(--space-sm);
+    font-size: 1.5rem;
+}
+
+.recipe-card h3 a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.recipe-card h3 a:hover {
+    color: var(--color-primary);
+}
+
+.recipe-card-content > p:not(.recipe-category) {
+    margin-bottom: var(--space-md);
+    color: var(--color-text-muted);
+}
+
+.recipe-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+
 
 
 
