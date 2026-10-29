@@ -141,13 +141,37 @@ a:focus-visible {
 5. Pagination
    ============================== */
 
-.pagination a {
-    display: inline-flex;
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    min-width: 48px;
-    min-height: 48px;
-    padding: var(--space-xs);
+    gap: var(--space-xs);
+    margin-top: var(--space-xl);
+}
+
+.pagination a {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text);
+    text-decoration: none;
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.pagination a:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.pagination a[aria-current="page"] {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    font-weight: 700;
 }
 
 /* ==============================
@@ -310,7 +334,6 @@ a:focus-visible {
     color: var(--color-text-muted);
 }
 
-
 /* ==============================
    Recipe Grid
    ============================== */
@@ -350,45 +373,62 @@ a:focus-visible {
 }
 
 
-
 /* ==============================
-   Responsive Layout
+   Categories Section
    ============================== */
 
-/* Tablet */
-@media (max-width: 48rem) {
-    .hero-content {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-text {
-        max-width: 100%;
-    }
+.categories-section {
+    padding-block: var(--space-section);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
 }
 
-/* Mobile */
-@media (max-width: 40rem) {
-    .site-header .container {
-        flex-direction: column;
-        justify-content: center;
-        gap: var(--space-xs);
-        padding-block: var(--space-sm);
-    }
-
-    .main-nav ul {
-        justify-content: center;
-        gap: var(--space-sm);
-    }
-
-    .recipe-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding-block: var(--space-xl);
-    }
+.categories-section h2 {
+    margin-bottom: var(--space-sm);
 }
 
+.categories-section > p:not(.eyebrow) {
+    max-width: 42rem;
+    margin-inline: auto;
+    margin-bottom: var(--space-lg);
+    color: var(--color-text-muted);
+}
+
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.category-list a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+}
+
+.category-list a:hover {
+    background-color: var(--color-border);
+}
+
+.category-list a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
 
 /* ==============================
    Recipe Card Content
@@ -440,6 +480,45 @@ a:focus-visible {
 .text-link:hover {
     text-decoration: underline;
 }
+
+/* ==============================
+   Responsive Layout
+   ============================== */
+
+/* Tablet */
+@media (max-width: 48rem) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 40rem) {
+    .site-header .container {
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--space-xs);
+        padding-block: var(--space-sm);
+    }
+
+    .main-nav ul {
+        justify-content: center;
+        gap: var(--space-sm);
+    }
+
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-block: var(--space-xl);
+    }
+}
+
 
 
 
