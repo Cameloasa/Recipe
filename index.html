@@ -1,62 +1,173 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!---Meta information för sidan--->
-    <!---Trigger deployment--->
+    <!-- Document metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe</title>
+    <meta
+        name="description"
+        content="Discover simple, delicious recipes for everyday cooking, from fluffy pancakes to homemade waffles."
+    >
+
+    <title>Recipe | Simple Recipes, Big Joy</title>
+
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <header>
-        <h1>🥞 Easy Pancake Recipe</h1>
-        <img src="images/pancakes.jpg" alt="Delicious Pancakes" class="pancake-img">
-    </header> 
-    
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="container">
+            <a class="site-logo" href="index.html">Recipe<span>.</span></a>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="#recipes">Recipes</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
     <main>
-        <section class="intro">
-            <h2>About this Recipe</h2>
-            <p>Fluffy, golden, and delicious pancakes made with simple ingredients. 
-                Perfect for breakfast or brunch! 🥞✨</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="eyebrow">WELCOME TO OUR KITCHEN</p>
+                    <h1>Simple Recipes, Big Joy</h1>
+                    <p>
+                        Discover delicious homemade recipes made with
+                        simple ingredients and a little love.
+                    </p>
+                    <a class="button" href="#recipes">Explore Recipes</a>
+                </div>
+
+                <div class="hero-image">
+                    <img
+                        src="images/hero-food.webp"
+                        alt="Golden pancakes topped with fresh berries and syrup"
+                        width="826"
+                        height="558"
+                        fetchpriority="high"
+                    >
+                </div>
+            </div>
         </section>
 
-        <section class="ingredients"></section>
-            <h2>Ingredients:</h2>
-            <ul>
-                <li>1 cup all-purpose flour</li>
-                <li>2 tablespoons sugar</li>
-                <li>1 teaspoon baking powder</li>
-                <li>1/2 teaspoon salt</li>
-                <li>1 cup milk</li>
-                <li>1 egg</li>
-                <li>2 tablespoons melted butter</li>
-                <li>1 teaspoon vanilla extract</li>
-                <li>Butter or oil for cooking</li>
+        <!-- Recipe Collection -->
+        <section class="recipe-section container" id="recipes">
+            <div class="section-heading">
+                <p class="eyebrow">FRESH FROM THE KITCHEN</p>
+                <h2>Our Latest Recipes</h2>
+                <p>Easy ideas to make your everyday meals special.</p>
+            </div>
+
+            <!-- Recipe Cards -->
+            <div class="recipe-grid">
+                <article class="recipe-card">
+                    <a class="recipe-image-link" href="recipes/pancakes.html">
+                        <img
+                            src="images/pancakes.webp"
+                            alt="Fluffy pancakes served with fresh berries"
+                            width="678"
+                            height="676"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <div class="recipe-card-content">
+                        <p class="recipe-category">Breakfast</p>
+                        <h3><a href="recipes/pancakes.html">Fluffy Pancakes</a></h3>
+                        <p>
+                            Soft, golden pancakes served with berries
+                            and a drizzle of maple syrup.
+                        </p>
+                        <div class="recipe-meta">
+                            <span>20 min</span>
+                            <span>Easy</span>
+                        </div>
+                        <a class="text-link" href="recipes/pancakes.html">
+                            View Recipe &rarr;
+                        </a>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <a class="recipe-image-link" href="recipes/waffles.html">
+                        <img
+                            src="images/waffles.webp"
+                            alt="Golden waffles topped with strawberries and blueberries"
+                            width="670"
+                            height="667"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <div class="recipe-card-content">
+                        <p class="recipe-category">Breakfast</p>
+                        <h3><a href="recipes/waffles.html">Belgian Waffles</a></h3>
+                        <p>
+                            Crispy on the outside, fluffy on the inside,
+                            and perfect with fresh fruit.
+                        </p>
+                        <div class="recipe-meta">
+                            <span>25 min</span>
+                            <span>Easy</span>
+                        </div>
+                        <a class="text-link" href="recipes/waffles.html">
+                            View Recipe &rarr;
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="pagination" aria-label="Recipe pages">
+                <a href="index.html" aria-current="page">1</a>
+                <a href="page-2.html">2</a>
+                <a href="page-3.html">3</a>
+                <a href="page-2.html" aria-label="Next page">Next &rarr;</a>
+            </nav>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section container" id="categories">
+            <p class="eyebrow">FIND YOUR INSPIRATION</p>
+            <h2>Explore by Category</h2>
+            <p>
+                From comforting breakfasts to fresh meals and sweet treats,
+                find an idea for every occasion.
+            </p>
+            <ul class="category-list">
+                <li>Breakfast</li>
+                <li>Lunch &amp; Dinner</li>
+                <li>Healthy</li>
+                <li>Desserts</li>
             </ul>
         </section>
 
-
-        <section class ="instructions">
-            <h2>Instructions:</h2>
-            <ol>
-                <li><strong>Mix the dry ingredients:</strong> In a bowl, whisk together the flour, sugar, baking powder, and salt.</li>
-                <li><strong>Prepare the wet ingredients:</strong> In another bowl, whisk the milk, egg, melted butter, and vanilla extract.</li>
-                <li><strong>Combine:</strong> Slowly pour the wet ingredients into the dry ingredients, stirring until just combined.</li>
-                <li><strong>Heat the pan:</strong> Grease a non-stick pan with butter or oil and heat over medium heat.</li>
-                <li><strong>Cook the pancakes:</strong> Pour 1/4 cup of batter onto the pan. Cook until bubbles form, then flip and cook for another 1-2 minutes.</li>
-                <li><strong>Serve:</strong> Stack the pancakes and serve warm with syrup, fruit, or any topping of your choice! 🍓🍯</li>
-            </ol>
+        <!-- About Section -->
+        <section class="about-section container" id="about">
+            <h2>A Little Love in Every Recipe</h2>
+            <p>
+                We believe good food does not have to be complicated.
+                Our collection celebrates simple ingredients,
+                homemade flavours, and recipes worth sharing.
+            </p>
         </section>
-
-
     </main>
 
-    <footer>
-        <p>© 2025 Pancake Lovers | Made with ❤️</p>
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Recipe. Made with love.</p>
+        </div>
     </footer>
-
-
 </body>
 </html>

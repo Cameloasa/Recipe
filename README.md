@@ -8,6 +8,33 @@ This is a simple recipe website for making pancakes, created as a practice proje
 
 - HTML5
 - CSS3
+- ex testing 
+- pillow
+
+```bash
+python -c "from PIL import Image; print('Pillow is ready')"
+python -c "from pathlib import Path; from PIL import Image, ImageOps; p=Path('images'); sizes={'hero-food':1600,'pancakes':900,'waffles':900,'pasta':900,'salad':900,'risotto':900,'brownies':900}; [(lambda src,limit: (lambda im: (im.thumbnail((limit,limit),Image.Resampling.LANCZOS), im.convert('RGB').save(src.with_suffix('.webp'), 'WEBP', quality=82, method=6)))(ImageOps.exif_transpose(Image.open(src)) ))(p/f'{name}.jpeg',limit) for name,limit in sizes.items() if (p/f'{name}.jpeg').exists()]; print('Conversion finished.')" 
+python -c "from pathlib import Path; from PIL import Image; [(lambda im: print(f'{p.name}: {im.width}x{im.height}'))(Image.open(p)) for p in sorted(Path('images').glob('*.webp'))]"
+```
+
+## Structure
+
+```text
+Recipe/
+├── index.html
+├── page-2.html
+├── style.css
+├── images/
+│   ├── pancakes.webp
+│   ├── waffles.webp
+│   ├── pasta.webp
+│   └── salad.webp
+└── recipes/
+    ├── pancakes.html
+    ├── waffles.html
+    ├── pasta.html
+    └── salad.html
+```
 
 ## Features
 
