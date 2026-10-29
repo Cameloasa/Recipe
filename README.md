@@ -23,17 +23,24 @@ python -c "from pathlib import Path; from PIL import Image; [(lambda im: print(f
 Recipe/
 ├── index.html
 ├── page-2.html
+├── page-3.html
 ├── style.css
 ├── images/
+│   ├── hero-food.webp
 │   ├── pancakes.webp
 │   ├── waffles.webp
 │   ├── pasta.webp
-│   └── salad.webp
-└── recipes/
-    ├── pancakes.html
-    ├── waffles.html
-    ├── pasta.html
-    └── salad.html
+│   ├── risotto.webp
+│   ├── salad.webp
+│   └── brownies.webp
+├── recipes/
+│   ├── pancakes.html
+│   └── waffles.html
+└── categories/
+    ├── breakfast.html
+    ├── lunch-dinner.html
+    ├── healthy.html
+    └── desserts.html
 ```
 
 ## Features
