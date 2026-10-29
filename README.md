@@ -1,23 +1,36 @@
-# Pancake Recipe
+# Recipe Website
 
 ## About the Project
 
-This is a simple recipe website for making pancakes, created as a practice project to learn and improve my HTML and CSS skills.
+This is a simple, responsive recipe website created as a practice project to learn and improve my HTML5 and CSS3 skills.
+
+The website features a collection of recipes, organized into categories, with individual pages containing ingredients and step-by-step cooking instructions.
 
 ## Technologies Used
 
 - HTML5
 - CSS3
-- ex testing 
-- pillow
+- Python 3
+- Pillow for image optimization
+- Git and GitHub
 
-```bash
-python -c "from PIL import Image; print('Pillow is ready')"
-python -c "from pathlib import Path; from PIL import Image, ImageOps; p=Path('images'); sizes={'hero-food':1600,'pancakes':900,'waffles':900,'pasta':900,'salad':900,'risotto':900,'brownies':900}; [(lambda src,limit: (lambda im: (im.thumbnail((limit,limit),Image.Resampling.LANCZOS), im.convert('RGB').save(src.with_suffix('.webp'), 'WEBP', quality=82, method=6)))(ImageOps.exif_transpose(Image.open(src)) ))(p/f'{name}.jpeg',limit) for name,limit in sizes.items() if (p/f'{name}.jpeg').exists()]; print('Conversion finished.')" 
-python -c "from pathlib import Path; from PIL import Image; [(lambda im: print(f'{p.name}: {im.width}x{im.height}'))(Image.open(p)) for p in sorted(Path('images').glob('*.webp'))]"
-```
+## Features
 
-## Structure
+- Homepage featuring selected recipes
+- Six individual recipe pages
+- Four recipe categories:
+  - Breakfast
+  - Lunch & Dinner
+  - Healthy
+  - Desserts
+- Ingredient lists and step-by-step instructions
+- Shared CSS stylesheet for consistent styling
+- Responsive layout for different screen sizes
+- Optimized WebP images
+- Semantic HTML structure and descriptive image alt text
+- Navigation between the homepage, categories, and individual recipes
+
+## Project Structure
 
 ```text
 Recipe/
@@ -25,6 +38,7 @@ Recipe/
 ├── page-2.html
 ├── page-3.html
 ├── style.css
+├── README.md
 ├── images/
 │   ├── hero-food.webp
 │   ├── pancakes.webp
@@ -35,7 +49,11 @@ Recipe/
 │   └── brownies.webp
 ├── recipes/
 │   ├── pancakes.html
-│   └── waffles.html
+│   ├── waffles.html
+│   ├── pasta.html
+│   ├── risotto.html
+│   ├── salad.html
+│   └── brownies.html
 └── categories/
     ├── breakfast.html
     ├── lunch-dinner.html
@@ -43,30 +61,50 @@ Recipe/
     └── desserts.html
 ```
 
-## Features
+## Image Optimization
 
-- Pancake ingredients list
-- Step-by-step cooking instructions
-- Simple and clean layout
-- CSS styling
+Images were converted to WebP format and resized using Python and Pillow to reduce file sizes and improve loading performance.
 
-## What I Learned
+To verify that Pillow is installed, run:
 
-- Structuring a webpage with semantic HTML
-- Styling elements with CSS
-- Organizing content in a clear and readable way
+```bash
+python -c "from PIL import Image; print('Pillow is ready')"
+```
+
+To inspect the dimensions of the WebP images, run:
+
+```bash
+python -c "from pathlib import Path; from PIL import Image; [(lambda im: print(f'{p.name}: {im.width}x{im.height}'))(Image.open(p)) for p in sorted(Path('images').glob('*.webp'))]"
+```
+
+The image conversion script was used during development to create optimized versions from the original JPEG files.
 
 ## Getting Started
 
 1. Clone or download this repository.
-2. Open `index.html` in your web browser.
-3. Explore the pancake recipe.
+2. Open the project folder.
+3. Open `index.html` in your web browser.
+4. Explore the recipes and browse the different categories.
+
+No additional installation is required to view the website.
+
+## What I Learned
+
+- Structuring webpages with semantic HTML elements.
+- Styling and organizing layouts with CSS.
+- Reusing a shared stylesheet across multiple pages.
+- Creating navigation between related pages.
+- Organizing recipes into categories.
+- Improving image loading performance with WebP.
+- Using Python and Pillow for image processing.
+- Checking accessibility and performance with browser developer tools.
 
 ## Future Improvements
 
-- Improve the responsive design for mobile devices.
-- Add more recipes.
+- Add more recipes and categories.
+- Continue improving accessibility and responsive design.
+- Explore additional ways to optimize website performance.
 
 ---
 
-This project was created for learning purposes.
+This project was created for learning purposes as part of my ongoing web development practice.
